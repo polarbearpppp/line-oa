@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kirene Memship Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body style="margin-top: -50px">
+    <div class="container">
+      <header>Kirene Signup</header>
+      <div class="progress-bar" style="margin-top: -15px">
+        <div class="step">
+          <p>Name</p>
+          <div class="bullet">
+            <span>1</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Contact</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Birth</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Submit</p>
+          <div class="bullet">
+            <span>4</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+      </div>
+      <div class="form-outer">
+        <form action="#">
+          <div class="page slide-page">
+            <div class="title">Basic Info:</div>
+            <div class="field">
+              <div class="label">First Name</div>
+              <input type="text" id="firstName" />
+            </div>
+            <div class="field">
+              <div class="label">Last Name</div>
+              <input type="text" id="lastName" />
+            </div>
+            <div class="field">
+              <div class="label">member Id</div>
+              <input type="number" id="memberId" />
+            </div>
+            <div class="field">
+              <button class="firstNext next">Next</button>
+            </div>
+          </div>
+          <div class="page">
+            <div class="title">Contact Info:</div>
+            <div class="field">
+              <div class="label">Email Address</div>
+              <input type="text" id="emailAdd" />
+            </div>
+            <div class="field">
+              <div class="label">Phone Number</div>
+              <input type="Number" id="phoneNum" />
+            </div>
+            <div class="field btns">
+              <button class="prev-1 prev">Previous</button>
+              <button class="next-1 next">Next</button>
+            </div>
+          </div>
+          <div class="page">
+            <div class="title">Date of Birth:</div>
+            <div class="field">
+              <div class="label">Date</div>
+              <input type="date" id="dateBirth" />
+            </div>
+            <div class="field">
+              <div class="label">Gender</div>
+              <select>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field btns">
+              <button class="prev-2 prev">Previous</button>
+              <button class="next-2 next">Next</button>
+            </div>
+          </div>
+          <div class="page" style="margin-top: -45px">
+            <div class="title">Member Detail:</div>
+            <div class="field" style="margin-bottom: -20px">
+              <div class="label">Name</div>
+              <div id="outFirstName" style="margin-left: 20px"></div>
+              <div id="outLastName" style="margin-left: 10px"></div>
+            </div>
+            <div class="field" style="margin-bottom: -20px">
+              <div class="label">Member Id</div>
+              <div id="outMemberId" style="margin-left: 20px"></div>
+            </div>
+            <div class="field" style="margin-bottom: -20px">
+              <div class="label">Email</div>
+              <div id="outEmailAdd" style="margin-left: 20px"></div>
+            </div>
+            <div class="field" style="margin-bottom: -20px">
+              <div class="label">Phone</div>
+              <div id="outPhoneNum" style="margin-left: 20px"></div>
+            </div>
+            <div class="field" style="margin-bottom: -20px">
+              <div class="label">Birth</div>
+              <div id="outDateBirth" style="margin-left: 20px"></div>
+            </div>
+
+            <div class="field btns">
+              <button class="prev-3 prev">Previous</button>
+              <button class="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        const input = document.getElementById('firstName');
+        const output = document.getElementById('outFirstName');
+        input.addEventListener('input', (event) => {
+        output.textContent = event.target.value;
+      });
+      const input2 = document.getElementById('lastName');
+      const output2 = document.getElementById('outLastName');
+      input2.addEventListener('input', (event) => {
+        output2.textContent = event.target.value;
+      });
+      const input3 = document.getElementById('emailAdd');
+      const output3 = document.getElementById('outEmailAdd');
+      input3.addEventListener('input', (event) => {
+        output3.textContent = event.target.value;
+      });
+      const input4 = document.getElementById('memberId');
+      const output4 = document.getElementById('outMemberId');
+      input4.addEventListener('input', (event) => {
+        output4.textContent = event.target.value;
+      });
+      const input5 = document.getElementById('phoneNum');
+      const output5 = document.getElementById('outPhoneNum');
+      input5.addEventListener('input', (event) => {
+        output5.textContent = event.target.value;
+      });
+      const input6 = document.getElementById('dateBirth');
+      const output6 = document.getElementById('outDateBirth');
+      input6.addEventListener('input', (event) => {
+        output6.textContent = event.target.value;
+      });
+    </script>
+  </body>
+</html>
