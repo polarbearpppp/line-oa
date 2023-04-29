@@ -73,6 +73,11 @@ nextBtnThird.addEventListener('click', function (event) {
   current += 1;
 });
 submitBtn.addEventListener('click', function () {
+    
+  bullet[current - 1].classList.add('active');
+  progressCheck[current - 1].classList.add('active');
+  progressText[current - 1].classList.add('active');
+  current += 1;
   const newOut3 = lineToken + ':' + output3.textContent + ':' + output4.textContent
   function generateUUID() {
     let uuid = '';
@@ -120,17 +125,13 @@ submitBtn.addEventListener('click', function () {
         console.log(error);
       });
   };
-  
-  bullet[current - 1].classList.add('active');
-  progressCheck[current - 1].classList.add('active');
-  progressText[current - 1].classList.add('active');
-  current += 1;
+
   sendData();
   
   setTimeout(function () {
     alert('Your Form Successfully Signed up');
     location.reload();
-  }, 1600);
+  },0);
 });
 
 

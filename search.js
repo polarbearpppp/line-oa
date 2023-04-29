@@ -10,10 +10,18 @@ searchForm.addEventListener('submit', (event) => {
   const inputValue = searchBar.value;
   citizenId.textContent = inputValue;
   localStorage.setItem('myInputValue', inputValue);
+  setTimeout(function () {
+    alert('Your Form Successfully Signed up');
+    // location.reload();
+  },0);
 });
 
 submitBtn.addEventListener('click', (event) => {
     const inputValue = searchBar.value;
     citizenId.textContent = inputValue;
     localStorage.setItem('myInputValue', inputValue);
+    setTimeout(function () {
+        alert('Your Form Successfully Signed up');
+        // location.reload();
+      },0);
 });
