@@ -62,6 +62,7 @@ const getData = (phoneNumber) => {
     console.log(`${phoneNumber}`)
     axios.get(url,{
         headers: {
+           'Access-Control-Allow-Origin': '*',
             'X-Requested-With': 'XMLHttpRequest',
             'Authorization': 'Basic ' + btoa('kireinethailand:5f5d150a3835480689ea121b7d3e3c00')
         }

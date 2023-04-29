@@ -104,6 +104,7 @@ submitBtn.addEventListener('click', function () {
         data,
         {
           headers: {
+            'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             Authorization:
