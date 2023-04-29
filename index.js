@@ -12,6 +12,42 @@ const progressCheck = document.querySelectorAll('.step .check');
 const bullet = document.querySelectorAll('.step .bullet');
 let current = 1;
 
+
+async function lineLiff() {
+  liff.ready.then(() => {
+    if (liff.isInClient()) {
+      return getUserProfile();
+    }
+  });
+  await liff.init({ liffId: '1660917313-B7RLVKbD' });
+}
+
+async function getUserProfile() {
+  const profile = await liff.getProfile();
+  // console.log(liff.getDecodedIDToken().email);
+  // const input3 = document.getElementById('emailAdd');
+  // const output3 = document.getElementById('outEmailAdd');
+  // input3.addEventListener('input', (event) => {
+  //   output3.textContent = event.target.value;
+  // });
+  return profile.userId;
+}
+
+const lineToken = lineLiff();
+
+// async function lineLiff() {
+//   await liff.init({ liffId: '' }); 
+//   if ((liff.isInClient())) {
+//     const newoutput3 =  await liff.getProfile();
+//     // output3.textContent += ':' + newoutput3.userId;
+//     // output3.textContent += ':' + output4.textContent;
+//     return newoutput3.userId
+//     // console.log(output3.textContent)
+//     // await sendData();
+//   }
+// };
+// const userId = lineLiff();
+
 nextBtnFirst.addEventListener('click', function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = '-25%';
@@ -37,19 +73,8 @@ nextBtnThird.addEventListener('click', function (event) {
   current += 1;
 });
 submitBtn.addEventListener('click', function () {
-
-  async function lineLiff() {
-    await liff.init({ liffId: '1660917313-B7RLVKbD' }); 
-    if ((liff.isInClient())) {
-      const newoutput3 =  await liff.getProfile();
-      output3.textContent += ':' + newoutput3.userId;
-      output3.textContent += ':' + output4.textContent;
-      // console.log(output3.textContent)
-      sendData();
-    }
-  };
-
-  async function generateUUID() {
+  const newOut3 = lineToken + ':' + output3.textContent + ':' + output4.textContent
+  function generateUUID() {
     let uuid = '';
     for (let i = 0; i < 32; i++) {
       if (i === 8 || i === 12 || i === 16 || i === 20) {
@@ -67,7 +92,7 @@ submitBtn.addEventListener('click', function () {
       "refId": uuid,
       "firstName": output.textContent,
       "lastName": output2.textContent,
-      "email": output3.textContent,
+      "email": newOut3,
       "phone": String(output5.textContent),
       "birthday": String(output6.textContent),
       "memberId": String(output4.textContent)
@@ -99,7 +124,7 @@ submitBtn.addEventListener('click', function () {
   progressCheck[current - 1].classList.add('active');
   progressText[current - 1].classList.add('active');
   current += 1;
-  lineLiff();
+  sendData();
   
   setTimeout(function () {
     alert('Your Form Successfully Signed up');

@@ -7,6 +7,27 @@ const customerInfo = document.getElementById('customer-info');
 const myInputValue = localStorage.getItem('myInputValue');
 console.log(myInputValue)
 
+async function lineLiff() {
+  liff.ready.then(() => {
+    if (liff.isInClient()) {
+      return getUserProfile();
+    }
+  });
+  await liff.init({ liffId: '1660917313-B7RLVKbD' });
+}
+
+async function getUserProfile() {
+  const profile = await liff.getProfile();
+  // console.log(liff.getDecodedIDToken().email);
+  // const input3 = document.getElementById('emailAdd');
+  // const output3 = document.getElementById('outEmailAdd');
+  // input3.addEventListener('input', (event) => {
+  //   output3.textContent = event.target.value;
+  // });
+  return profile.userId;
+}
+
+const lineToken = lineLiff();
 
 const displayCustomerData = (customer) => {
   const customerData = `
@@ -79,16 +100,8 @@ const getData = (phoneNumber) => {
 //       });
 // };
 if (myInputValue === null){
-  async function lineLiff() {
-    await liff.init({ liffId: '1660917313-q81Rp38e' }); 
-    if ((liff.isInClient())) {
-      const newoutput3 =  await liff.getProfile();
-      // console.log(output3.textContent)
-      getData(newoutput3.userId);
-    }
-  };
-  lineLiff();
-}else{
+    getData(lineToken);
+  }else{
   getData(myInputValue);
 }
 
