@@ -57,7 +57,7 @@ const displayCustomerData = (customer) => {
 };
 
 const getData = (phoneNumber) => {
-    const url = `https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers?email=${phoneNumber}`;
+    const url = `https://api.storehubhq.com/customers?email=${phoneNumber}`;
     // console.log(window.citizenValue)
     console.log(`${phoneNumber}`)
     axios.get(url,{

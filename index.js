@@ -100,7 +100,7 @@ submitBtn.addEventListener('click', function () {
     console.log(data)
     axios
       .post(
-        'https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers',
+        'https://api.storehubhq.com/customers',
         data,
         {
           headers: {
