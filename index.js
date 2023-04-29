@@ -37,25 +37,19 @@ nextBtnThird.addEventListener('click', function (event) {
   current += 1;
 });
 submitBtn.addEventListener('click', function () {
+
   async function lineLiff() {
     await liff.init({ liffId: '1660917313-B7RLVKbD' }); 
     if ((liff.isInClient())) {
-      const newoutput3 =  getUserProfile();
-      output3.textContent += ':' + newoutput3;
+      const newoutput3 =  await liff.getProfile();
+      output3.textContent += ':' + newoutput3.userId;
       output3.textContent += ':' + output4.textContent;
       // console.log(output3.textContent)
       sendData();
     }
   };
-  
-  async function getUserProfile() {
-    const profile = await liff.getProfile();
-    const userId = profile.userId;
-    // const userId = 'asdfjl23jkrujlsdjf'
-    return userId;
-  };
 
-  function generateUUID() {
+  async function generateUUID() {
     let uuid = '';
     for (let i = 0; i < 32; i++) {
       if (i === 8 || i === 12 || i === 16 || i === 20) {
@@ -110,7 +104,7 @@ submitBtn.addEventListener('click', function () {
   setTimeout(function () {
     alert('Your Form Successfully Signed up');
     location.reload();
-  }, 800);
+  }, 1600);
 });
 
 

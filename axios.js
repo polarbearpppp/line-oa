@@ -82,17 +82,10 @@ if (myInputValue === null){
   async function lineLiff() {
     await liff.init({ liffId: '1660917313-q81Rp38e' }); 
     if ((liff.isInClient())) {
-      const newoutput3 =  getUserProfile();
+      const newoutput3 =  await liff.getProfile();
       // console.log(output3.textContent)
-      getData(newoutput3);
+      getData(newoutput3.userId);
     }
-  };
-  
-  async function getUserProfile() {
-    const profile = await liff.getProfile();
-    const userId = profile.userId;
-    // const userId = 'asdfjl23jkrujlsdjf'
-    return userId;
   };
   lineLiff();
 }else{
