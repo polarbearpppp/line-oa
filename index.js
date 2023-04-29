@@ -37,20 +37,21 @@ nextBtnThird.addEventListener('click', function (event) {
   current += 1;
 });
 submitBtn.addEventListener('click', function () {
-  function lineLiff() {
-    // await liff.init({ liffId: '1660917313-dRQgEPL2' }); (liff.isInClient())
-    if (true) {
+  async function lineLiff() {
+    await liff.init({ liffId: '1660917313-B7RLVKbD' }); 
+    if ((liff.isInClient())) {
       const newoutput3 =  getUserProfile();
       output3.textContent += ':' + newoutput3;
-      console.log(output3.textContent)
+      output3.textContent += ':' + output4.textContent;
+      // console.log(output3.textContent)
       sendData();
     }
   };
   
-   function getUserProfile() {
-    // const profile = await liff.getProfile();
-    // const userId = profile.userId;
-    const userId = 'asdfjl23jkrujlsdjf'
+  async function getUserProfile() {
+    const profile = await liff.getProfile();
+    const userId = profile.userId;
+    // const userId = 'asdfjl23jkrujlsdjf'
     return userId;
   };
 

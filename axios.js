@@ -54,32 +54,51 @@ const getData = (phoneNumber) => {
       })
 };
 
-const sendData = () => {
+// const sendData = () => {
 
-    const data = {
-        "refId": "eb953958-e68f-11ed-a05b-0242ac120033",
-        "firstName": "aktanin",
-        "lastName": "bomboom",
-        "email": "kkkkk@gmail.com",
-        "phone": "0830016162",
-        "birthday": "2023-03-15",
-        "memberId": "1103900061961"
-      };
-      axios.post('https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers', data, {
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-          'Authorization': 'Basic ' + btoa('kireinethailand:5f5d150a3835480689ea121b7d3e3c00')
-        }
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-};
+//     const data = {
+//         "refId": "eb953958-e68f-11ed-a05b-0242ac120033",
+//         "firstName": "aktanin",
+//         "lastName": "bomboom",
+//         "email": "kkkkk@gmail.com",
+//         "phone": "0830016162",
+//         "birthday": "2023-03-15",
+//         "memberId": "1103900061961"
+//       };
+//       axios.post('https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers', data, {
+//         headers: {
+//           'X-Requested-With': 'XMLHttpRequest',
+//           'Authorization': 'Basic ' + btoa('kireinethailand:5f5d150a3835480689ea121b7d3e3c00')
+//         }
+//       })
+//       .then(response => {
+//         console.log(response);
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+// };
+if (myInputValue === null){
+  async function lineLiff() {
+    await liff.init({ liffId: '1660917313-q81Rp38e' }); 
+    if ((liff.isInClient())) {
+      const newoutput3 =  getUserProfile();
+      // console.log(output3.textContent)
+      getData(newoutput3);
+    }
+  };
+  
+  async function getUserProfile() {
+    const profile = await liff.getProfile();
+    const userId = profile.userId;
+    // const userId = 'asdfjl23jkrujlsdjf'
+    return userId;
+  };
+  lineLiff();
+}else{
+  getData(myInputValue);
+}
 
-getData(myInputValue);
 // getBtn.addEventListener('click', getData("0830016162"));
 // postBtn.addEventListener('click', sendData);
 // import { myVar } from "./search";

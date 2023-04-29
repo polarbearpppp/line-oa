@@ -128,9 +128,6 @@ body {
   
   }
   
-  .glyphicon-search:hover{
-  
-  }
   
   .bar{
     vertical-align: super;
@@ -193,3 +190,8 @@ body {
     /* bottom: 10%; */
     /* right: 10%; */
   }
+
+
+[class*="col-"] {
+  width: 100%;
+}
