@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
   </head>
-  <body style="margin-top: -50px">
+  <body style="margin-top: -50px; flex: auto;">
     <div class="container">
       <header>Kirene Signup</header>
       <div class="progress-bar" style="margin-top: -15px">
@@ -129,38 +129,9 @@
         </form>
       </div>
     </div>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script> -->
     <script src="index.js"></script>
-    <script>
-        const input = document.getElementById('firstName');
-        const output = document.getElementById('outFirstName');
-        input.addEventListener('input', (event) => {
-        output.textContent = event.target.value;
-      });
-      const input2 = document.getElementById('lastName');
-      const output2 = document.getElementById('outLastName');
-      input2.addEventListener('input', (event) => {
-        output2.textContent = event.target.value;
-      });
-      const input3 = document.getElementById('emailAdd');
-      const output3 = document.getElementById('outEmailAdd');
-      input3.addEventListener('input', (event) => {
-        output3.textContent = event.target.value;
-      });
-      const input4 = document.getElementById('memberId');
-      const output4 = document.getElementById('outMemberId');
-      input4.addEventListener('input', (event) => {
-        output4.textContent = event.target.value;
-      });
-      const input5 = document.getElementById('phoneNum');
-      const output5 = document.getElementById('outPhoneNum');
-      input5.addEventListener('input', (event) => {
-        output5.textContent = event.target.value;
-      });
-      const input6 = document.getElementById('dateBirth');
-      const output6 = document.getElementById('outDateBirth');
-      input6.addEventListener('input', (event) => {
-        output6.textContent = event.target.value;
-      });
-    </script>
   </body>
 </html>

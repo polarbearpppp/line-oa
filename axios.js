@@ -17,7 +17,7 @@ const displayCustomerData = (customer) => {
     </div>
     <div class="field" style="margin-bottom: 10px;">
     <div class="label" style="margin-left: -200px">Email:</div>
-    <p>${customer.email}</p>
+    <p>${customer.email.split(':')[2]}</p>
     </div>
     <div class="field" style="margin-bottom: 10px">
     <div class="label" style="margin-left: -200px">Phone:</div>
@@ -36,13 +36,13 @@ const displayCustomerData = (customer) => {
 };
 
 const getData = (phoneNumber) => {
-    const url = `https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers?memberId=${phoneNumber}`;
+    const url = `https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers?email=${phoneNumber}`;
     // console.log(window.citizenValue)
     console.log(`${phoneNumber}`)
     axios.get(url,{
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
-            'Authorization': 'Basic ' + btoa('kirene:872e4fb6babc4f79a6966576da4be3fe')
+            'Authorization': 'Basic ' + btoa('kireinethailand:5f5d150a3835480689ea121b7d3e3c00')
         }
     })
     .then(response => {
@@ -57,12 +57,18 @@ const getData = (phoneNumber) => {
 const sendData = () => {
 
     const data = {
-        
+        "refId": "eb953958-e68f-11ed-a05b-0242ac120033",
+        "firstName": "aktanin",
+        "lastName": "bomboom",
+        "email": "kkkkk@gmail.com",
+        "phone": "0830016162",
+        "birthday": "2023-03-15",
+        "memberId": "1103900061961"
       };
       axios.post('https://cors-anywhere.herokuapp.com/https://api.storehubhq.com/customers', data, {
         headers: {
           'X-Requested-With': 'XMLHttpRequest',
-          'Authorization': 'Basic ' + btoa('kirene:872e4fb6babc4f79a6966576da4be3fe')
+          'Authorization': 'Basic ' + btoa('kireinethailand:5f5d150a3835480689ea121b7d3e3c00')
         }
       })
       .then(response => {
